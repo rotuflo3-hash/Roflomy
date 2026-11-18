@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="ROFLO / NODNEST — Music, videos and creativity.">
+<meta name="description" content="ROFLO / NODNEST — Music, videos and creative inspiration.">
 <meta name="theme-color" content="#090909">
 
 <title>ROFLO / NODNEST | Personal Space</title>
@@ -73,21 +73,7 @@ header {
     color: var(--gold);
 }
 
-/* GENERAL SECTIONS */
-
-section {
-    padding: 80px 8%;
-}
-
-.section-title {
-    text-align: center;
-    color: var(--gold);
-    font-size: 32px;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-}
-
-/* HOME */
+/* INTRO */
 
 .hero {
     min-height: 220px;
@@ -136,35 +122,46 @@ section {
 /* MUSIC SECTION */
 
 #music {
+    padding: 65px 3%;
     background: var(--bg);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--gold);
+    font-size: 32px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
 }
 
 .music-description {
     text-align: center;
     color: var(--muted);
-    margin: -20px auto 35px;
+    margin-bottom: 40px;
 }
 
-/* TWO COLUMNS */
+/* THREE COLUMN LAYOUT */
 
 .music-layout {
-    max-width: 1250px;
+    width: 100%;
+    max-width: 1550px;
     margin: auto;
     display: grid;
-    grid-template-columns: 0.85fr 2fr;
-    gap: 25px;
+    grid-template-columns: 0.9fr 2fr 0.9fr;
+    gap: 22px;
     align-items: start;
 }
 
-/* LEFT SIDE - THREE SONGS */
+/* SIDE COLUMNS */
 
-.small-songs {
+.side-songs {
     display: flex;
     flex-direction: column;
     gap: 18px;
+    min-width: 0;
 }
 
-.small-song-card {
+.song-card {
     background: var(--card);
     border: 1px solid #292929;
     border-radius: 8px;
@@ -172,12 +169,12 @@ section {
     transition: 0.3s;
 }
 
-.small-song-card:hover {
+.song-card:hover {
     border-color: var(--gold);
     transform: translateY(-3px);
 }
 
-.small-video {
+.video-frame {
     width: 100%;
     aspect-ratio: 16 / 9;
     background: #000;
@@ -185,39 +182,40 @@ section {
     overflow: hidden;
 }
 
-.small-video iframe {
+.video-frame iframe {
     width: 100%;
     height: 100%;
     border: 0;
+    display: block;
 }
 
-.small-song-card h3 {
+.song-card h3 {
     color: var(--gold);
     font-size: 14px;
     margin-top: 9px;
     text-align: center;
 }
 
-/* RIGHT SIDE - PLAYLIST */
+/* CENTER PLAYLIST */
 
-.large-playlist {
+.playlist-column {
     width: 100%;
+    min-width: 0;
     background: var(--card);
     border: 1px solid #292929;
     border-radius: 8px;
-    padding: 12px;
-    overflow: hidden;
+    padding: 15px;
 }
 
 .playlist-heading {
     color: var(--gold);
     text-align: center;
-    font-size: 20px;
-    margin-bottom: 12px;
+    font-size: 22px;
+    margin-bottom: 15px;
     letter-spacing: 1px;
 }
 
-.playlist-video {
+.playlist-frame {
     width: 100%;
     aspect-ratio: 16 / 9;
     background: #000;
@@ -225,10 +223,11 @@ section {
     overflow: hidden;
 }
 
-.playlist-video iframe {
+.playlist-frame iframe {
     width: 100%;
     height: 100%;
     border: 0;
+    display: block;
 }
 
 .playlist-link {
@@ -249,9 +248,10 @@ section {
     color: #090909;
 }
 
-/* SOCIAL */
+/* FOLLOW ME */
 
 .social-section {
+    padding: 75px 8%;
     text-align: center;
     background: #101010;
 }
@@ -294,26 +294,34 @@ footer {
     border-top: 1px solid #222;
 }
 
-/* TABLET AND MOBILE */
+/* TABLET */
 
-@media (max-width: 750px) {
+@media (max-width: 1050px) {
 
     .music-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1.5fr;
     }
 
-    .small-songs {
-        display: grid;
-        grid-template-columns: 1fr;
+    .playlist-column {
+        grid-column: 1 / -1;
+        grid-row: 1;
     }
 
-    .large-playlist {
-        order: -1;
+    .left-songs {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .right-songs {
+        grid-column: 2;
+        grid-row: 2;
     }
 
 }
 
-@media (max-width: 600px) {
+/* MOBILE */
+
+@media (max-width: 650px) {
 
     header {
         justify-content: center;
@@ -325,17 +333,40 @@ footer {
         gap: 18px;
     }
 
-    section {
-        padding: 60px 6%;
-    }
-
-    .hero {
-        min-height: 220px;
-        padding: 30px 15px;
+    #music {
+        padding: 50px 5%;
     }
 
     .section-title {
         font-size: 26px;
+    }
+
+    .music-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .playlist-column {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .left-songs {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .right-songs {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .playlist-heading {
+        font-size: 19px;
+    }
+
+    .social-section {
+        padding: 55px 6%;
     }
 
 }
@@ -361,168 +392,252 @@ footer {
 
 <main>
 
-    <!-- HOME -->
+<!-- HOME -->
 
-    <section class="hero" id="home">
+<section class="hero" id="home">
 
-        <h1>ROFLO / NODNEST</h1>
+    <h1>ROFLO / NODNEST</h1>
 
-        <p>
-            Welcome to my personal space.
-            Music, videos and creative inspiration.
-        </p>
+    <p>
+        Welcome to my personal space.
+        Music, videos and creative inspiration.
+    </p>
 
-        <a href="#music" class="hero-button">
-            Explore My Music
-        </a>
+    <a href="#music" class="hero-button">
+        Explore My Music
+    </a>
 
-    </section>
-
-
-    <!-- MY MUSIC -->
-
-    <section id="music">
-
-        <h2 class="section-title">
-            NODNEST — MY MUSIC
-        </h2>
-
-        <p class="music-description">
-            Discover my music and listen to all my releases.
-        </p>
-
-        <div class="music-layout">
-
-            <!-- LEFT: THREE INDIVIDUAL SONGS -->
-
-            <div class="small-songs">
-
-                <div class="small-song-card">
-
-                    <div class="small-video">
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/Ted8aHuwV3s"
-                            title="NODNEST Music 1"
-                            loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <h3>NODNEST — Music 01</h3>
-
-                </div>
+</section>
 
 
-                <div class="small-song-card">
+<!-- MY MUSIC -->
 
-                    <div class="small-video">
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/nx0WM3niGUQ"
-                            title="NODNEST Music 2"
-                            loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
+<section id="music">
 
-                    <h3>NODNEST — Music 02</h3>
+    <h2 class="section-title">
+        NODNEST — MY MUSIC
+    </h2>
 
-                </div>
+    <p class="music-description">
+        Discover my music and listen to all my releases.
+    </p>
+
+    <div class="music-layout">
 
 
-                <div class="small-song-card">
+        <!-- LEFT SIDE - THREE VIDEOS -->
 
-                    <div class="small-video">
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/g3L3SL5vpDE"
-                            title="NODNEST Music 3"
-                            loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
+        <div class="side-songs left-songs">
 
-                    <h3>NODNEST — Music 03</h3>
+            <div class="song-card">
 
-                </div>
-
-            </div>
-
-
-            <!-- RIGHT: COMPLETE YOUTUBE PLAYLIST -->
-
-            <div class="large-playlist">
-
-                <h3 class="playlist-heading">
-                    NODNEST — ALL MY MUSIC
-                </h3>
-
-                <div class="playlist-video">
-
+                <div class="video-frame">
                     <iframe
-                        src="https://www.youtube-nocookie.com/embed/videoseries?list=PLOnL4yLsBCrA"
-                        title="NODNEST — Complete Music Playlist"
+                        src="https://www.youtube-nocookie.com/embed/Ted8aHuwV3s"
+                        title="NODNEST Music 01"
                         loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
                     </iframe>
-
                 </div>
 
-                <a
-                    class="playlist-link"
-                    href="https://www.youtube.com/playlist?list=PLOnL4yLsBCrA"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                <h3>NODNEST — Music 01</h3>
 
-                    Open Full Playlist on YouTube ↗
+            </div>
 
-                </a>
+
+            <div class="song-card">
+
+                <div class="video-frame">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/nx0WM3niGUQ"
+                        title="NODNEST Music 02"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <h3>NODNEST — Music 02</h3>
+
+            </div>
+
+
+            <div class="song-card">
+
+                <div class="video-frame">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/g3L3SL5vpDE"
+                        title="NODNEST Music 03"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <h3>NODNEST — Music 03</h3>
 
             </div>
 
         </div>
 
-    </section>
 
+        <!-- CENTER - COMPLETE PLAYLIST -->
 
-    <!-- FOLLOW ME -->
+        <div class="playlist-column">
 
-    <section class="social-section" id="social">
+            <h3 class="playlist-heading">
+                NODNEST — ALL MY MUSIC
+            </h3>
 
-        <h2 class="section-title">
-            FOLLOW ME
-        </h2>
+            <div class="playlist-frame">
 
-        <p>
-            Follow my channels and stay connected.
-            Thank you for listening and supporting my music!
-        </p>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/videoseries?list=PLOnL4yLsBCrA"
+                    title="NODNEST Complete Music Playlist"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
 
-        <div class="social-links">
+            </div>
 
             <a
-                href="https://www.youtube.com/@Nodnest"
+                class="playlist-link"
+                href="https://www.youtube.com/playlist?list=PLOnL4yLsBCrA"
                 target="_blank"
                 rel="noopener noreferrer">
 
-                YouTube
-
-            </a>
-
-            <a
-                href="https://www.facebook.com/florin0888?locale=ro_RO"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                Facebook
+                Open Full Playlist on YouTube ↗
 
             </a>
 
         </div>
 
-    </section>
+
+        <!-- RIGHT SIDE - FIVE NEW VIDEOS -->
+
+        <div class="side-songs right-songs">
+
+            <div class="song-card">
+
+                <div class="video-frame">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/hf44Xdx5kUQ"
+                        title="NODNEST Music 04"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <h3>NODNEST — Music 04</h3>
+
+            </div>
+
+
+            <div class="song-card">
+
+                <div class="video-frame">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/nx0WM3niGUQ"
+                        title="NODNEST Music 05"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <h3>NODNEST — Music 05</h3>
+
+            </div>
+
+
+            <div class="song-card">
+
+                <div class="video-frame">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/a8RPumVg8Po"
+                        title="NODNEST Music 06"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <h3>NODNEST — Music 06</h3>
+
+            </div>
+
+
+            <div class="song-card">
+
+                <div class="video-frame">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/mqM3l0gaVZo"
+                        title="NODNEST Music 07"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <h3>NODNEST — Music 07</h3>
+
+            </div>
+
+
+            <div class="song-card">
+
+                <div class="video-frame">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/wlVLMkJKu34"
+                        title="NODNEST Music 08"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <h3>NODNEST — Music 08</h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOLLOW ME -->
+
+<section class="social-section" id="social">
+
+    <h2 class="section-title">
+        FOLLOW ME
+    </h2>
+
+    <p>
+        Follow my channels and stay connected.
+        Thank you for listening and supporting my music!
+    </p>
+
+    <div class="social-links">
+
+        <a
+            href="https://www.youtube.com/@Nodnest"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            YouTube
+
+        </a>
+
+        <a
+            href="https://www.facebook.com/florin0888?locale=ro_RO"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Facebook
+
+        </a>
+
+    </div>
+
+</section>
 
 </main>
 
@@ -545,7 +660,6 @@ document.getElementById("year").textContent =
 </body>
 </html>
 ```
-
    
 
 
