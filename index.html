@@ -33,6 +33,8 @@ body {
     line-height: 1.6;
 }
 
+/* HEADER */
+
 header {
     width: 100%;
     padding: 22px 8%;
@@ -69,9 +71,13 @@ header {
     color: var(--gold);
 }
 
+/* SECTIONS */
+
 section {
     padding: 80px 8%;
 }
+
+/* HOME */
 
 .hero {
     min-height: 430px;
@@ -80,8 +86,11 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background:
-        radial-gradient(circle at center, #252016 0%, #090909 65%);
+    background: radial-gradient(
+        circle at center,
+        #252016 0%,
+        #090909 65%
+    );
 }
 
 .hero h1 {
@@ -113,6 +122,12 @@ section {
     color: #090909;
 }
 
+/* MUSIC */
+
+#music {
+    background: var(--bg);
+}
+
 .section-title {
     text-align: center;
     color: var(--gold);
@@ -121,31 +136,28 @@ section {
     letter-spacing: 2px;
 }
 
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: auto;
+.music-description {
+    text-align: center;
+    color: var(--muted);
+    margin: -20px auto 30px;
 }
 
-.video-card {
+.playlist-box {
+    max-width: 1100px;
+    margin: auto;
     background: var(--card);
     border: 1px solid #292929;
     border-radius: 8px;
+    padding: 15px;
     overflow: hidden;
-    transition: 0.3s;
-}
-
-.video-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--gold);
 }
 
 .video-container {
     width: 100%;
     aspect-ratio: 16 / 9;
     background: #000;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .video-container iframe {
@@ -154,25 +166,24 @@ section {
     border: 0;
 }
 
-.video-info {
-    padding: 16px;
-}
-
-.video-info h3 {
+.playlist-link {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 5px;
+    padding: 12px 25px;
+    border: 1px solid var(--gold);
+    border-radius: 5px;
     color: var(--gold);
-    font-size: 16px;
-    margin-bottom: 12px;
-}
-
-.watch-link {
-    color: var(--muted);
     text-decoration: none;
-    font-size: 13px;
+    transition: 0.3s;
 }
 
-.watch-link:hover {
-    color: var(--gold);
+.playlist-link:hover {
+    background: var(--gold);
+    color: #090909;
 }
+
+/* SOCIAL */
 
 .social-section {
     text-align: center;
@@ -207,6 +218,8 @@ section {
     color: #090909;
 }
 
+/* FOOTER */
+
 footer {
     padding: 25px 10px;
     text-align: center;
@@ -214,6 +227,8 @@ footer {
     font-size: 13px;
     border-top: 1px solid #222;
 }
+
+/* MOBILE */
 
 @media (max-width: 600px) {
     header {
@@ -232,6 +247,14 @@ footer {
 
     .hero {
         min-height: 350px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .playlist-box {
+        padding: 8px;
     }
 }
 </style>
@@ -252,7 +275,9 @@ footer {
 <main>
 
     <!-- HOME -->
+
     <section class="hero" id="home">
+
         <h1>ROFLO / NODNEST</h1>
 
         <p>
@@ -263,18 +288,56 @@ footer {
         <a href="#music" class="hero-button">
             Explore My Music
         </a>
+
     </section>
 
-    <!-- MUSIC -->
+    <!-- MY MUSIC -->
+
     <section id="music">
-        <h2 class="section-title">MY MUSIC</h2>
 
-        <div class="video-grid" id="music-list"></div>
+        <h2 class="section-title">
+            NODNEST — ALL MY MUSIC
+        </h2>
+
+        <p class="music-description">
+            Listen to my music and discover all my releases.
+        </p>
+
+        <div class="playlist-box">
+
+            <div class="video-container">
+
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/videoseries?list=PLOnL4yLsBCrA"
+                    title="NODNEST — All My Music"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+            <a
+                class="playlist-link"
+                href="https://www.youtube.com/playlist?list=PLOnL4yLsBCrA"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Open Full Playlist on YouTube ↗
+
+            </a>
+
+        </div>
+
     </section>
 
-    <!-- SOCIAL -->
+    <!-- FOLLOW ME -->
+
     <section class="social-section" id="social">
-        <h2 class="section-title">FOLLOW ME</h2>
+
+        <h2 class="section-title">
+            FOLLOW ME
+        </h2>
 
         <p>
             Follow my channels and stay connected.
@@ -282,95 +345,46 @@ footer {
         </p>
 
         <div class="social-links">
-            <a href="https://www.youtube.com/@Nodnest"
-               target="_blank"
-               rel="noopener noreferrer">
+
+            <a
+                href="https://www.youtube.com/@Nodnest"
+                target="_blank"
+                rel="noopener noreferrer">
+
                 YouTube
+
             </a>
 
-            <a href="https://www.facebook.com/florin0888?locale=ro_RO"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a
+                href="https://www.facebook.com/florin0888?locale=ro_RO"
+                target="_blank"
+                rel="noopener noreferrer">
+
                 Facebook
+
             </a>
+
         </div>
+
     </section>
 
 </main>
 
 <footer>
-    © <span id="year"></span> ROFLO / NODNEST. All rights reserved.
+
+    © <span id="year"></span>
+    ROFLO / NODNEST. All rights reserved.
+
 </footer>
 
 <script>
-const songs = [
-    {
-        title: "NODNEST — Music 01",
-        id: "Ted8aHuwV3s"
-    },
-    {
-        title: "NODNEST — Music 02",
-        id: "nx0WM3niGUQ"
-    },
-    {
-        title: "NODNEST — Music 03",
-        id: "g3L3SL5vpDE"
-    },
-    {
-        title: "NODNEST — Music 04",
-        id: "1Ibs_6Z3v8A"
-    }
-];
-
-const musicList = document.getElementById("music-list");
-
-songs.forEach((song) => {
-    const card = document.createElement("article");
-    card.className = "video-card";
-
-    const container = document.createElement("div");
-    container.className = "video-container";
-
-    const iframe = document.createElement("iframe");
-    iframe.src = "https://www.youtube-nocookie.com/embed/" +
-        encodeURIComponent(song.id);
-    iframe.title = song.title;
-    iframe.loading = "lazy";
-    iframe.allow =
-        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.allowFullscreen = true;
-
-    container.appendChild(iframe);
-
-    const info = document.createElement("div");
-    info.className = "video-info";
-
-    const heading = document.createElement("h3");
-    heading.textContent = song.title;
-
-    const link = document.createElement("a");
-    link.className = "watch-link";
-    link.href = "https://www.youtube.com/watch?v=" +
-        encodeURIComponent(song.id);
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "Watch on YouTube ↗";
-
-    info.appendChild(heading);
-    info.appendChild(link);
-
-    card.appendChild(container);
-    card.appendChild(info);
-
-    musicList.appendChild(card);
-});
-
 document.getElementById("year").textContent =
     new Date().getFullYear();
 </script>
 
 </body>
 </html>
+
 
 
 
