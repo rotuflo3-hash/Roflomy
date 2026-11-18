@@ -1,6 +1,7 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
 <title>ROFLO / NODNEST | Personal Space</title>
 
 <style>
+
 :root {
     --bg: #090909;
     --card: #151515;
@@ -85,10 +87,11 @@ section {
     letter-spacing: 2px;
 }
 
-/* HOME */
+/* HOME - SMALLER INTRO */
 
 .hero {
-    min-height: 430px;
+    min-height: 220px;
+    padding: 30px 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,22 +105,22 @@ section {
 }
 
 .hero h1 {
-    font-size: clamp(38px, 7vw, 70px);
-    letter-spacing: 5px;
+    font-size: clamp(25px, 4vw, 38px);
+    letter-spacing: 3px;
     color: var(--gold);
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .hero p {
     color: var(--muted);
-    font-size: 18px;
+    font-size: 14px;
     max-width: 650px;
 }
 
 .hero-button {
     display: inline-block;
-    margin-top: 30px;
-    padding: 12px 28px;
+    margin-top: 15px;
+    padding: 8px 20px;
     border: 1px solid var(--gold);
     color: var(--gold);
     text-decoration: none;
@@ -307,6 +310,7 @@ footer {
     .large-playlist {
         order: -1;
     }
+
 }
 
 @media (max-width: 600px) {
@@ -321,225 +325,7 @@ footer {
         gap: 18px;
     }
 
-    section {
-        padding: 60px 6%;
-    }
-
-    .hero {
-        min-height: 350px;
-    }
-
-    .section-title {
-        font-size: 26px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-
-<header>
-
-    <div class="logo">ROFLO / NODNEST</div>
-
-    <nav class="links">
-        <a href="#home">Home</a>
-        <a href="#music">My Music</a>
-        <a href="#social">Follow Me</a>
-    </nav>
-
-</header>
-
-<main>
-
-    <!-- HOME -->
-
-    <section class="hero" id="home">
-
-        <h1>ROFLO / NODNEST</h1>
-
-        <p>
-            Welcome to my personal space.
-            Music, videos and creative inspiration.
-        </p>
-
-        <a href="#music" class="hero-button">
-            Explore My Music
-        </a>
-
-    </section>
-
-
-    <!-- MY MUSIC -->
-
-    <section id="music">
-
-        <h2 class="section-title">
-            NODNEST — MY MUSIC
-        </h2>
-
-        <p class="music-description">
-            Discover my music and listen to all my releases.
-        </p>
-
-        <div class="music-layout">
-
-            <!-- LEFT: THREE INDIVIDUAL SONGS -->
-
-            <div class="small-songs">
-
-                <div class="small-song-card">
-
-                    <div class="small-video">
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/Ted8aHuwV3s"
-                            title="NODNEST Music 1"
-                            loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <h3>NODNEST — Music 01</h3>
-
-                </div>
-
-
-                <div class="small-song-card">
-
-                    <div class="small-video">
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/nx0WM3niGUQ"
-                            title="NODNEST Music 2"
-                            loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <h3>NODNEST — Music 02</h3>
-
-                </div>
-
-
-                <div class="small-song-card">
-
-                    <div class="small-video">
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/g3L3SL5vpDE"
-                            title="NODNEST Music 3"
-                            loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <h3>NODNEST — Music 03</h3>
-
-                </div>
-
-            </div>
-
-
-            <!-- RIGHT: COMPLETE YOUTUBE PLAYLIST -->
-
-            <div class="large-playlist">
-
-                <h3 class="playlist-heading">
-                    NODNEST — ALL MY MUSIC
-                </h3>
-
-                <div class="playlist-video">
-
-                    <iframe
-                        src="https://www.youtube-nocookie.com/embed/videoseries?list=PLOnL4yLsBCrA"
-                        title="NODNEST — Complete Music Playlist"
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
-
-                </div>
-
-                <a
-                    class="playlist-link"
-                    href="https://www.youtube.com/playlist?list=PLOnL4yLsBCrA"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    Open Full Playlist on YouTube ↗
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOLLOW ME -->
-
-    <section class="social-section" id="social">
-
-        <h2 class="section-title">
-            FOLLOW ME
-        </h2>
-
-        <p>
-            Follow my channels and stay connected.
-            Thank you for listening and supporting my music!
-        </p>
-
-        <div class="social-links">
-
-            <a
-                href="https://www.youtube.com/@Nodnest"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                YouTube
-
-            </a>
-
-            <a
-                href="https://www.facebook.com/florin0888?locale=ro_RO"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                Facebook
-
-            </a>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    © <span id="year"></span>
-    ROFLO / NODNEST. All rights reserved.
-
-</footer>
-
-
-<script>
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-</script>
-
-</body>
-</html>
-
-
-
+   
 
 
 
