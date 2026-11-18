@@ -17,47 +17,64 @@
   --gold:#c9a45c;
   --line:rgba(201,164,92,.25);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
+
+* { box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
   margin:0;
   background:var(--bg);
   color:var(--text);
   font-family:Arial,sans-serif;
   line-height:1.65;
 }
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1120px,92%);margin:auto}
 
-header{
+a { color:inherit; text-decoration:none; }
+
+.wrap {
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+header {
   position:sticky;
   top:0;
   z-index:10;
   background:rgba(9,9,9,.96);
   border-bottom:1px solid var(--line);
 }
-nav{
+
+nav {
   min-height:72px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:20px;
 }
-.brand{
+
+.brand {
   font-weight:900;
   letter-spacing:.15em;
   color:var(--gold);
 }
-.links{display:flex;gap:22px;flex-wrap:wrap}
-.links a{
+
+.links {
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+.links a {
   font-size:.82rem;
   color:var(--muted);
   text-transform:uppercase;
   letter-spacing:.08em;
 }
-.links a:hover{color:var(--gold)}
 
-.hero{
+.links a:hover { color:var(--gold); }
+
+.hero {
   min-height:600px;
   display:flex;
   align-items:center;
@@ -68,25 +85,38 @@ nav{
     #090909 75%
   );
 }
-.hero-content{padding:100px 0;max-width:750px}
-.eyebrow{
+
+.hero-content {
+  padding:100px 0;
+  max-width:750px;
+}
+
+.eyebrow {
   color:var(--gold);
   font-size:.76rem;
   font-weight:bold;
   letter-spacing:.22em;
   text-transform:uppercase;
 }
-h1{
+
+h1 {
   font-size:clamp(3rem,8vw,6rem);
   line-height:1;
   margin:20px 0;
 }
-h2{font-size:clamp(2rem,4vw,3rem);line-height:1.15}
-h3{margin-bottom:8px}
-p{color:var(--muted)}
-.gold{color:var(--gold)}
 
-.btn{
+h2 {
+  font-size:clamp(2rem,4vw,3rem);
+  line-height:1.15;
+}
+
+h3 { margin-bottom:8px; }
+
+p { color:var(--muted); }
+
+.gold { color:var(--gold); }
+
+.btn {
   display:inline-block;
   margin:14px 10px 0 0;
   padding:12px 22px;
@@ -95,62 +125,80 @@ p{color:var(--muted)}
   font-weight:bold;
   text-transform:uppercase;
   font-size:.8rem;
+  border-radius:3px;
 }
-.btn.outline{
+
+.btn.outline {
   background:transparent;
   color:var(--text);
   border:1px solid var(--gold);
 }
 
-section{padding:85px 0}
-.about-content{max-width:750px}
-.music{background:#101010}
-.section-intro{max-width:700px;margin-bottom:35px}
+section { padding:85px 0; }
 
-.video-grid{
+.about-content { max-width:750px; }
+
+.music { background:#101010; }
+
+.section-intro {
+  max-width:700px;
+  margin-bottom:35px;
+}
+
+.video-grid {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:25px;
 }
-.video-card{
+
+.video-card {
   padding:18px;
   background:var(--panel);
   border:1px solid var(--line);
   min-width:0;
+  border-radius:5px;
 }
-.video-container{
+
+.video-container {
   width:100%;
   aspect-ratio:16/9;
 }
-.video-container iframe{
+
+.video-container iframe {
   width:100%;
   height:100%;
   border:0;
   border-radius:5px;
 }
-.video-card h3{color:var(--gold)}
-.video-card a{
+
+.video-card h3 { color:var(--gold); }
+
+.video-card a {
   display:inline-block;
   margin-top:12px;
   color:var(--gold);
   text-decoration:underline;
 }
 
-.social{
+.social {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:20px;
 }
-.social-card{
+
+.social-card {
   padding:30px;
   background:var(--panel);
   border:1px solid var(--line);
+  border-radius:5px;
 }
-.social-card strong{
+
+.social-card strong {
   font-size:1.2rem;
   color:var(--gold);
 }
-.social-card a{
+
+.social-card a {
   display:block;
   margin-top:12px;
   color:var(--gold);
@@ -158,24 +206,32 @@ section{padding:85px 0}
   overflow-wrap:anywhere;
 }
 
-footer{
+footer {
   border-top:1px solid var(--line);
   padding:30px 0;
   text-align:center;
   color:var(--muted);
 }
 
-@media(max-width:760px){
-  nav{
+@media(max-width:760px) {
+  nav {
     padding:16px 0;
     align-items:flex-start;
     flex-direction:column;
   }
-  .links{gap:13px}
-  .links a{font-size:.72rem}
-  .hero{min-height:500px}
-  .video-grid,.social{grid-template-columns:1fr}
-  section{padding:60px 0}
+
+  .links { gap:13px; }
+
+  .links a { font-size:.72rem; }
+
+  .hero { min-height:500px; }
+
+  .video-grid,
+  .social {
+    grid-template-columns:1fr;
+  }
+
+  section { padding:60px 0; }
 }
 </style>
 </head>
@@ -186,6 +242,7 @@ footer{
 <div class="wrap">
 <nav>
 <a class="brand" href="#home">ROFLO / NODNEST</a>
+
 <div class="links">
 <a href="#home">Home</a>
 <a href="#about">About</a>
@@ -198,26 +255,53 @@ footer{
 
 <main>
 
+<!-- HOME -->
 <section class="hero" id="home">
 <div class="wrap hero-content">
+
 <div class="eyebrow">Music · Inspiration</div>
-<h1>Welcome to<br><span class="gold">ROFLO / NODNEST.</span></h1>
-<p>A personal space for music and creative ideas worth sharing. Explore, listen and enjoy.</p>
+
+<h1>
+Welcome to<br>
+<span class="gold">ROFLO / NODNEST.</span>
+</h1>
+
+<p>
+A personal space for music and creative ideas worth sharing.
+Explore, listen and enjoy.
+</p>
+
 <a class="btn" href="#music">Explore My Music</a>
 <a class="btn outline" href="#social">Follow Me</a>
+
 </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
 <div class="wrap about-content">
+
 <div class="eyebrow">About this space</div>
+
 <h2>Creativity lives in the moments.</h2>
-<p>Welcome to ROFLO / NODNEST — my personal corner of the internet.</p>
-<p>Here I share music and creative projects that inspire me.</p>
-<p>Discover something you enjoy and come back for new content. Thank you for being here.</p>
+
+<p>
+Welcome to ROFLO / NODNEST — my personal corner of the internet.
+</p>
+
+<p>
+Here I share music and creative projects that inspire me.
+</p>
+
+<p>
+Discover something you enjoy and come back for new content.
+Thank you for being here.
+</p>
+
 </div>
 </section>
 
+<!-- MUSIC -->
 <section class="music" id="music">
 <div class="wrap">
 
@@ -232,8 +316,10 @@ footer{
 </div>
 </section>
 
+<!-- SOCIAL -->
 <section id="social">
 <div class="wrap">
+
 <div class="eyebrow">Stay connected</div>
 <h2>Follow Me</h2>
 
@@ -243,14 +329,18 @@ footer{
 <strong>YouTube — NODNEST</strong>
 <p>Discover my music and latest releases.</p>
 <a href="https://www.youtube.com/@Nodnest"
-target="_blank" rel="noopener">Visit my YouTube channel</a>
+target="_blank" rel="noopener">
+Visit my YouTube channel
+</a>
 </div>
 
 <div class="social-card">
 <strong>Facebook — ROFLO</strong>
 <p>Follow me for new content and updates.</p>
 <a href="https://www.facebook.com/florin0888?locale=ro_RO"
-target="_blank" rel="noopener">Visit my Facebook profile</a>
+target="_blank" rel="noopener">
+Visit my Facebook profile
+</a>
 </div>
 
 </div>
@@ -267,40 +357,42 @@ target="_blank" rel="noopener">Visit my Facebook profile</a>
 
 <script>
 
-// ======================================
-// ADD YOUR YOUTUBE SONGS HERE
-// ======================================
+// ========================================
+// NODNEST MUSIC LIST
+// Add new songs by copying one entry.
+// ========================================
 
 const songs = [
+
   {
     title: "NODNEST — Music 01",
     id: "Ted8aHuwV3s"
   },
+
   {
     title: "NODNEST — Music 02",
     id: "nx0WM3niGUQ"
   },
+
   {
     title: "NODNEST — Music 03",
     id: "g3L3SL5vpDE"
   },
+
   {
     title: "NODNEST — Music 04",
-     id: "1Ibs_6Z3v8A"
-  
-  //   title: "NODNEST — Music 04",
-  //   id: "1Ibs_6Z3v8A"
-  // },
+    id: "1Ibs_6Z3v8A"
+  }
 
 ];
 
-// ======================================
-// AUTOMATIC MUSIC DISPLAY
-// ======================================
+// ========================================
+// AUTOMATIC VIDEO DISPLAY
+// ========================================
 
 const musicList = document.getElementById("music-list");
 
-songs.forEach(song => {
+songs.forEach((song) => {
 
   const card = document.createElement("div");
   card.className = "video-card";
@@ -309,23 +401,28 @@ songs.forEach(song => {
   container.className = "video-container";
 
   const iframe = document.createElement("iframe");
+
   iframe.src =
     "https://www.youtube-nocookie.com/embed/" +
     encodeURIComponent(song.id);
 
   iframe.title = song.title;
   iframe.loading = "lazy";
+
   iframe.allow =
     "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+
   iframe.allowFullscreen = true;
 
   const title = document.createElement("h3");
   title.textContent = song.title;
 
   const link = document.createElement("a");
+
   link.href =
     "https://www.youtube.com/watch?v=" +
     encodeURIComponent(song.id);
+
   link.target = "_blank";
   link.rel = "noopener";
   link.textContent = "Watch on YouTube";
@@ -343,6 +440,8 @@ songs.forEach(song => {
 
 </body>
 </html>
+
+
 
 
 
