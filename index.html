@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My Personal Website — photography, videos and creative projects.">
+  <title>My Personal Website</title>
+  <style>
+    :root{--bg:#0b1220;--panel:#121d30;--text:#eef4ff;--muted:#a9b7cc;--accent:#69b7ff;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:5;background:rgba(11,18,32,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0}
+    .brand{font-weight:800;letter-spacing:.12em;font-size:.9rem}
+    .links{display:flex;gap:20px;flex-wrap:wrap}.links a{font-size:.9rem;color:var(--muted)}.links a:hover{color:var(--accent)}
+    .hero{min-height:560px;display:grid;align-items:center;background:linear-gradient(90deg,rgba(7,13,24,.94),rgba(7,13,24,.45)),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=85') center/cover}
+    .hero-content{padding:90px 0;max-width:680px}
+    .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem}
+    h1{font-size:clamp(2.7rem,7vw,5.3rem);line-height:1.02;margin:16px 0}
+    h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin:0 0 14px}
+    p{color:var(--muted)}.lead{font-size:1.15rem;max-width:590px}
+    .btn{display:inline-block;margin:12px 10px 0 0;padding:12px 19px;border-radius:999px;background:var(--accent);color:#07111f;font-weight:800}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
+    section{padding:82px 0}.section-intro{max-width:650px;margin-bottom:30px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .tile{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
+    .tile img{width:100%;height:220px;object-fit:cover;display:block}
+    .tile div{padding:18px}.tile h3{margin:0 0 6px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+    .feature-img{width:100%;height:360px;object-fit:cover;border-radius:20px;border:1px solid var(--line)}
+    .social{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .social-card{padding:28px;border-radius:18px;background:var(--panel);border:1px solid var(--line)}
+    .social-card strong{font-size:1.2rem}.social-card p{min-height:52px}
+    .note{font-size:.85rem;color:#8292aa}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
+    @media(max-width:760px){.links{gap:10px}.links a{font-size:.78rem}.grid{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.social{grid-template-columns:1fr}.hero{min-height:500px}}
+    @media(max-width:480px){nav{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.tile img{height:210px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#home">MY PERSONAL WEBSITE</a>
+      <div class="links">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#videos">Videos</a><a href="#social">Social</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-content">
+      <div class="eyebrow">Photography · Videos · Creativity</div>
+      <h1>Welcome to<br>My World.</h1>
+      <p class="lead">A personal space where I share photographs, videos, creative projects and the moments that inspire me.</p>
+      <a class="btn" href="#gallery">Explore the Gallery</a>
+      <a class="btn secondary" href="#social">Follow Me</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow">A little about this website</div>
+        <h2>Creativity, moments<br>and inspiration.</h2>
+        <p>Welcome to my personal website. I created this space to share my interests, favourite photographs, videos and creative projects.</p>
+        <p>Take a look around, discover something you enjoy and stay connected for future updates. Thank you for visiting!</p>
+      </div>
+      <img class="feature-img" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85" alt="Mountain landscape">
+    </div>
+  </section>
+
+  <section id="gallery" style="background:#0e1727">
+    <div class="wrap">
+      <div class="section-intro">
+        <div class="eyebrow">Photo gallery</div>
+        <h2>Moments Worth Sharing</h2>
+        <p>A visual collection of places, details and moments. Replace these sample photos with your own pictures whenever you like.</p>
+      </div>
+      <div class="grid">
+        <article class="tile"><img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85" alt="Sunrise over hills"><div><h3>New Perspectives</h3><p>Finding beauty in the everyday.</p></div></article>
+        <article class="tile"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85" alt="Forest path"><div><h3>Nature & Places</h3><p>Scenes that make us pause.</p></div></article>
+        <article class="tile"><img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=900&q=85" alt="Green landscape"><div><h3>Little Moments</h3><p>Memories worth keeping.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos">
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow">Video collection</div>
+        <h2>Watch. Discover. Enjoy.</h2>
+        <p>Visit my YouTube channel to explore videos, music and other creative content. New posts and projects may appear here over time.</p>
+        <a class="btn" href="https://www.youtube.com/@Nodnest" target="_blank" rel="noopener">Visit YouTube</a>
+        <p class="note">The YouTube link currently points to @Nodnest. You can change it if you want to use another channel.</p>
+      </div>
+      <img class="feature-img" src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=85" alt="Camera filming outdoors">
+    </div>
+  </section>
+
+  <section id="social" style="background:#0e1727">
+    <div class="wrap">
+      <div class="section-intro">
+        <div class="eyebrow">Stay connected</div>
+        <h2>Follow Me on Social Media</h2>
+        <p>Find more updates, photos and videos on my social channels.</p>
+      </div>
+      <div class="social">
+        <div class="social-card">
+          <strong>Facebook</strong>
+          <p>Follow my Facebook profile for updates, photos and shared moments.</p>
+          <a class="btn secondary" href="https://www.facebook.com/" target="_blank" rel="noopener">Add Facebook link</a>
+          <div class="note">Replace this button address with your personal Facebook profile or page URL.</div>
+        </div>
+        <div class="social-card">
+          <strong>YouTube</strong>
+          <p>Subscribe and discover my latest videos and creative content.</p>
+          <a class="btn" href="https://www.youtube.com/@Nodnest" target="_blank" rel="noopener">Subscribe on YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 My Personal Website · Thank you for visiting.</div>
+</footer>
+</body>
+</html>
