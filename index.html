@@ -71,10 +71,18 @@ header {
     color: var(--gold);
 }
 
-/* SECTIONS */
+/* GENERAL SECTIONS */
 
 section {
     padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--gold);
+    font-size: 32px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
 }
 
 /* HOME */
@@ -122,37 +130,51 @@ section {
     color: #090909;
 }
 
-/* MUSIC */
+/* MUSIC SECTION */
 
 #music {
     background: var(--bg);
 }
 
-.section-title {
-    text-align: center;
-    color: var(--gold);
-    font-size: 32px;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-}
-
 .music-description {
     text-align: center;
     color: var(--muted);
-    margin: -20px auto 30px;
+    margin: -20px auto 35px;
 }
 
-.playlist-box {
-    max-width: 1100px;
+/* TWO COLUMNS */
+
+.music-layout {
+    max-width: 1250px;
     margin: auto;
+    display: grid;
+    grid-template-columns: 0.85fr 2fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* LEFT SIDE - THREE SONGS */
+
+.small-songs {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.small-song-card {
     background: var(--card);
     border: 1px solid #292929;
     border-radius: 8px;
-    padding: 15px;
-    overflow: hidden;
+    padding: 10px;
+    transition: 0.3s;
 }
 
-.video-container {
+.small-song-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.small-video {
     width: 100%;
     aspect-ratio: 16 / 9;
     background: #000;
@@ -160,7 +182,47 @@ section {
     overflow: hidden;
 }
 
-.video-container iframe {
+.small-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.small-song-card h3 {
+    color: var(--gold);
+    font-size: 14px;
+    margin-top: 9px;
+    text-align: center;
+}
+
+/* RIGHT SIDE - PLAYLIST */
+
+.large-playlist {
+    width: 100%;
+    background: var(--card);
+    border: 1px solid #292929;
+    border-radius: 8px;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.playlist-heading {
+    color: var(--gold);
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.playlist-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.playlist-video iframe {
     width: 100%;
     height: 100%;
     border: 0;
@@ -169,13 +231,14 @@ section {
 .playlist-link {
     display: block;
     width: fit-content;
-    margin: 25px auto 5px;
-    padding: 12px 25px;
+    margin: 20px auto 5px;
+    padding: 11px 22px;
     border: 1px solid var(--gold);
     border-radius: 5px;
     color: var(--gold);
     text-decoration: none;
     transition: 0.3s;
+    text-align: center;
 }
 
 .playlist-link:hover {
@@ -228,9 +291,26 @@ footer {
     border-top: 1px solid #222;
 }
 
-/* MOBILE */
+/* TABLET AND MOBILE */
+
+@media (max-width: 750px) {
+
+    .music-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .small-songs {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .large-playlist {
+        order: -1;
+    }
+}
 
 @media (max-width: 600px) {
+
     header {
         justify-content: center;
         text-align: center;
@@ -252,17 +332,16 @@ footer {
     .section-title {
         font-size: 26px;
     }
-
-    .playlist-box {
-        padding: 8px;
-    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
+
     <div class="logo">ROFLO / NODNEST</div>
 
     <nav class="links">
@@ -270,6 +349,7 @@ footer {
         <a href="#music">My Music</a>
         <a href="#social">Follow Me</a>
     </nav>
+
 </header>
 
 <main>
@@ -291,45 +371,114 @@ footer {
 
     </section>
 
+
     <!-- MY MUSIC -->
 
     <section id="music">
 
         <h2 class="section-title">
-            NODNEST — ALL MY MUSIC
+            NODNEST — MY MUSIC
         </h2>
 
         <p class="music-description">
-            Listen to my music and discover all my releases.
+            Discover my music and listen to all my releases.
         </p>
 
-        <div class="playlist-box">
+        <div class="music-layout">
 
-            <div class="video-container">
+            <!-- LEFT: THREE INDIVIDUAL SONGS -->
 
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/videoseries?list=PLOnL4yLsBCrA"
-                    title="NODNEST — All My Music"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
+            <div class="small-songs">
+
+                <div class="small-song-card">
+
+                    <div class="small-video">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/Ted8aHuwV3s"
+                            title="NODNEST Music 1"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <h3>NODNEST — Music 01</h3>
+
+                </div>
+
+
+                <div class="small-song-card">
+
+                    <div class="small-video">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/nx0WM3niGUQ"
+                            title="NODNEST Music 2"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <h3>NODNEST — Music 02</h3>
+
+                </div>
+
+
+                <div class="small-song-card">
+
+                    <div class="small-video">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/g3L3SL5vpDE"
+                            title="NODNEST Music 3"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <h3>NODNEST — Music 03</h3>
+
+                </div>
 
             </div>
 
-            <a
-                class="playlist-link"
-                href="https://www.youtube.com/playlist?list=PLOnL4yLsBCrA"
-                target="_blank"
-                rel="noopener noreferrer">
 
-                Open Full Playlist on YouTube ↗
+            <!-- RIGHT: COMPLETE YOUTUBE PLAYLIST -->
 
-            </a>
+            <div class="large-playlist">
+
+                <h3 class="playlist-heading">
+                    NODNEST — ALL MY MUSIC
+                </h3>
+
+                <div class="playlist-video">
+
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/videoseries?list=PLOnL4yLsBCrA"
+                        title="NODNEST — Complete Music Playlist"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+                <a
+                    class="playlist-link"
+                    href="https://www.youtube.com/playlist?list=PLOnL4yLsBCrA"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Open Full Playlist on YouTube ↗
+
+                </a>
+
+            </div>
 
         </div>
 
     </section>
+
 
     <!-- FOLLOW ME -->
 
@@ -370,12 +519,16 @@ footer {
 
 </main>
 
+
+<!-- FOOTER -->
+
 <footer>
 
     © <span id="year"></span>
     ROFLO / NODNEST. All rights reserved.
 
 </footer>
+
 
 <script>
 document.getElementById("year").textContent =
@@ -384,6 +537,7 @@ document.getElementById("year").textContent =
 
 </body>
 </html>
+
 
 
 
