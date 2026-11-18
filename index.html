@@ -4,234 +4,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ROFLO / NODNEST — music and creative inspiration.">
+
+<meta name="description" content="ROFLO / NODNEST — Music, videos and creativity.">
 <meta name="theme-color" content="#090909">
+
 <title>ROFLO / NODNEST | Personal Space</title>
 
 <style>
 :root {
-  --bg:#090909;
-  --panel:#151515;
-  --text:#f5f1e8;
-  --muted:#b9b2a5;
-  --gold:#c9a45c;
-  --line:rgba(201,164,92,.25);
+    --bg: #090909;
+    --card: #151515;
+    --gold: #d6ad60;
+    --text: #f5f5f5;
+    --muted: #aaa;
 }
 
-* { box-sizing:border-box; }
-
-html { scroll-behavior:smooth; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
 body {
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,sans-serif;
-  line-height:1.65;
-}
-
-a { color:inherit; text-decoration:none; }
-
-.wrap {
-  width:min(1120px,92%);
-  margin:auto;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
 }
 
 header {
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:rgba(9,9,9,.96);
-  border-bottom:1px solid var(--line);
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: #101010;
+    border-bottom: 1px solid rgba(214,173,96,0.25);
 }
 
-nav {
-  min-height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.brand {
-  font-weight:900;
-  letter-spacing:.15em;
-  color:var(--gold);
+.logo {
+    color: var(--gold);
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 .links {
-  display:flex;
-  gap:22px;
-  flex-wrap:wrap;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
 .links a {
-  font-size:.82rem;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:.08em;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-.links a:hover { color:var(--gold); }
+.links a:hover {
+    color: var(--gold);
+}
+
+section {
+    padding: 80px 8%;
+}
 
 .hero {
-  min-height:600px;
-  display:flex;
-  align-items:center;
-  background:radial-gradient(
-    ellipse at 75% 50%,
-    #302416 0%,
-    #15110d 35%,
-    #090909 75%
-  );
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at center, #252016 0%, #090909 65%);
 }
 
-.hero-content {
-  padding:100px 0;
-  max-width:750px;
+.hero h1 {
+    font-size: clamp(38px, 7vw, 70px);
+    letter-spacing: 5px;
+    color: var(--gold);
+    margin-bottom: 15px;
 }
 
-.eyebrow {
-  color:var(--gold);
-  font-size:.76rem;
-  font-weight:bold;
-  letter-spacing:.22em;
-  text-transform:uppercase;
+.hero p {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 650px;
 }
 
-h1 {
-  font-size:clamp(3rem,8vw,6rem);
-  line-height:1;
-  margin:20px 0;
+.hero-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 28px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.3s;
 }
 
-h2 {
-  font-size:clamp(2rem,4vw,3rem);
-  line-height:1.15;
+.hero-button:hover {
+    background: var(--gold);
+    color: #090909;
 }
 
-h3 { margin-bottom:8px; }
-
-p { color:var(--muted); }
-
-.gold { color:var(--gold); }
-
-.btn {
-  display:inline-block;
-  margin:14px 10px 0 0;
-  padding:12px 22px;
-  background:var(--gold);
-  color:#100d07;
-  font-weight:bold;
-  text-transform:uppercase;
-  font-size:.8rem;
-  border-radius:3px;
-}
-
-.btn.outline {
-  background:transparent;
-  color:var(--text);
-  border:1px solid var(--gold);
-}
-
-section { padding:85px 0; }
-
-.about-content { max-width:750px; }
-
-.music { background:#101010; }
-
-.section-intro {
-  max-width:700px;
-  margin-bottom:35px;
+.section-title {
+    text-align: center;
+    color: var(--gold);
+    font-size: 32px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
 }
 
 .video-grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .video-card {
-  padding:18px;
-  background:var(--panel);
-  border:1px solid var(--line);
-  min-width:0;
-  border-radius:5px;
+    background: var(--card);
+    border: 1px solid #292929;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
 }
 
 .video-container {
-  width:100%;
-  aspect-ratio:16/9;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
 }
 
 .video-container iframe {
-  width:100%;
-  height:100%;
-  border:0;
-  border-radius:5px;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
-.video-card h3 { color:var(--gold); }
-
-.video-card a {
-  display:inline-block;
-  margin-top:12px;
-  color:var(--gold);
-  text-decoration:underline;
+.video-info {
+    padding: 16px;
 }
 
-.social {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+.video-info h3 {
+    color: var(--gold);
+    font-size: 16px;
+    margin-bottom: 12px;
 }
 
-.social-card {
-  padding:30px;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:5px;
+.watch-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
 }
 
-.social-card strong {
-  font-size:1.2rem;
-  color:var(--gold);
+.watch-link:hover {
+    color: var(--gold);
 }
 
-.social-card a {
-  display:block;
-  margin-top:12px;
-  color:var(--gold);
-  text-decoration:underline;
-  overflow-wrap:anywhere;
+.social-section {
+    text-align: center;
+    background: #101010;
+}
+
+.social-section p {
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    min-width: 150px;
+    padding: 14px 25px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--gold);
+    color: #090909;
 }
 
 footer {
-  border-top:1px solid var(--line);
-  padding:30px 0;
-  text-align:center;
-  color:var(--muted);
+    padding: 25px 10px;
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+    border-top: 1px solid #222;
 }
 
-@media(max-width:760px) {
-  nav {
-    padding:16px 0;
-    align-items:flex-start;
-    flex-direction:column;
-  }
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
 
-  .links { gap:13px; }
+    .links {
+        justify-content: center;
+        gap: 18px;
+    }
 
-  .links a { font-size:.72rem; }
+    section {
+        padding: 60px 6%;
+    }
 
-  .hero { min-height:500px; }
-
-  .video-grid,
-  .social {
-    grid-template-columns:1fr;
-  }
-
-  section { padding:60px 0; }
+    .hero {
+        min-height: 350px;
+    }
 }
 </style>
 </head>
@@ -239,207 +240,138 @@ footer {
 <body>
 
 <header>
-<div class="wrap">
-<nav>
-<a class="brand" href="#home">ROFLO / NODNEST</a>
+    <div class="logo">ROFLO / NODNEST</div>
 
-<div class="links">
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#music">My Music</a>
-<a href="#social">Follow Me</a>
-</div>
-</nav>
-</div>
+    <nav class="links">
+        <a href="#home">Home</a>
+        <a href="#music">My Music</a>
+        <a href="#social">Follow Me</a>
+    </nav>
 </header>
 
 <main>
 
-<!-- HOME -->
-<section class="hero" id="home">
-<div class="wrap hero-content">
+    <!-- HOME -->
+    <section class="hero" id="home">
+        <h1>ROFLO / NODNEST</h1>
 
-<div class="eyebrow">Music · Inspiration</div>
+        <p>
+            Welcome to my personal space.
+            Music, videos and creative inspiration.
+        </p>
 
-<h1>
-Welcome to<br>
-<span class="gold">ROFLO / NODNEST.</span>
-</h1>
+        <a href="#music" class="hero-button">
+            Explore My Music
+        </a>
+    </section>
 
-<p>
-A personal space for music and creative ideas worth sharing.
-Explore, listen and enjoy.
-</p>
+    <!-- MUSIC -->
+    <section id="music">
+        <h2 class="section-title">MY MUSIC</h2>
 
-<a class="btn" href="#music">Explore My Music</a>
-<a class="btn outline" href="#social">Follow Me</a>
+        <div class="video-grid" id="music-list"></div>
+    </section>
 
-</div>
-</section>
+    <!-- SOCIAL -->
+    <section class="social-section" id="social">
+        <h2 class="section-title">FOLLOW ME</h2>
 
-<!-- ABOUT -->
-<section id="about">
-<div class="wrap about-content">
+        <p>
+            Follow my channels and stay connected.
+            Thank you for listening and supporting my music!
+        </p>
 
-<div class="eyebrow">About this space</div>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@Nodnest"
+               target="_blank"
+               rel="noopener noreferrer">
+                YouTube
+            </a>
 
-<h2>Creativity lives in the moments.</h2>
-
-<p>
-Welcome to ROFLO / NODNEST — my personal corner of the internet.
-</p>
-
-<p>
-Here I share music and creative projects that inspire me.
-</p>
-
-<p>
-Discover something you enjoy and come back for new content.
-Thank you for being here.
-</p>
-
-</div>
-</section>
-
-<!-- MUSIC -->
-<section class="music" id="music">
-<div class="wrap">
-
-<div class="section-intro">
-<div class="eyebrow">NODNEST</div>
-<h2>My Music</h2>
-<p>Listen and enjoy my latest music and releases.</p>
-</div>
-
-<div class="video-grid" id="music-list"></div>
-
-</div>
-</section>
-
-<!-- SOCIAL -->
-<section id="social">
-<div class="wrap">
-
-<div class="eyebrow">Stay connected</div>
-<h2>Follow Me</h2>
-
-<div class="social">
-
-<div class="social-card">
-<strong>YouTube — NODNEST</strong>
-<p>Discover my music and latest releases.</p>
-<a href="https://www.youtube.com/@Nodnest"
-target="_blank" rel="noopener">
-Visit my YouTube channel
-</a>
-</div>
-
-<div class="social-card">
-<strong>Facebook — ROFLO</strong>
-<p>Follow me for new content and updates.</p>
-<a href="https://www.facebook.com/florin0888?locale=ro_RO"
-target="_blank" rel="noopener">
-Visit my Facebook profile
-</a>
-</div>
-
-</div>
-</div>
-</section>
+            <a href="https://www.facebook.com/florin0888?locale=ro_RO"
+               target="_blank"
+               rel="noopener noreferrer">
+                Facebook
+            </a>
+        </div>
+    </section>
 
 </main>
 
 <footer>
-<div class="wrap">
-© 2026 ROFLO / NODNEST. All rights reserved.
-</div>
+    © <span id="year"></span> ROFLO / NODNEST. All rights reserved.
 </footer>
 
 <script>
-
-// ========================================
-// NODNEST MUSIC LIST
-// Add new songs by copying one entry.
-// ========================================
-
 const songs = [
-
-  {
-    title: "NODNEST — Music 01",
-    id: "Ted8aHuwV3s"
-  },
-
-  {
-    title: "NODNEST — Music 02",
-    id: "nx0WM3niGUQ"
-  },
-
-  {
-    title: "NODNEST — Music 03",
-    id: "g3L3SL5vpDE"
-  },
-
-  {
-    title: "NODNEST — Music 04",
-    id: "1Ibs_6Z3v8A"
-  }
-
+    {
+        title: "NODNEST — Music 01",
+        id: "Ted8aHuwV3s"
+    },
+    {
+        title: "NODNEST — Music 02",
+        id: "nx0WM3niGUQ"
+    },
+    {
+        title: "NODNEST — Music 03",
+        id: "g3L3SL5vpDE"
+    },
+    {
+        title: "NODNEST — Music 04",
+        id: "1Ibs_6Z3v8A"
+    }
 ];
-
-// ========================================
-// AUTOMATIC VIDEO DISPLAY
-// ========================================
 
 const musicList = document.getElementById("music-list");
 
 songs.forEach((song) => {
+    const card = document.createElement("article");
+    card.className = "video-card";
 
-  const card = document.createElement("div");
-  card.className = "video-card";
+    const container = document.createElement("div");
+    container.className = "video-container";
 
-  const container = document.createElement("div");
-  container.className = "video-container";
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/" +
+        encodeURIComponent(song.id);
+    iframe.title = song.title;
+    iframe.loading = "lazy";
+    iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
 
-  const iframe = document.createElement("iframe");
+    container.appendChild(iframe);
 
-  iframe.src =
-    "https://www.youtube-nocookie.com/embed/" +
-    encodeURIComponent(song.id);
+    const info = document.createElement("div");
+    info.className = "video-info";
 
-  iframe.title = song.title;
-  iframe.loading = "lazy";
+    const heading = document.createElement("h3");
+    heading.textContent = song.title;
 
-  iframe.allow =
-    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    const link = document.createElement("a");
+    link.className = "watch-link";
+    link.href = "https://www.youtube.com/watch?v=" +
+        encodeURIComponent(song.id);
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Watch on YouTube ↗";
 
-  iframe.allowFullscreen = true;
+    info.appendChild(heading);
+    info.appendChild(link);
 
-  const title = document.createElement("h3");
-  title.textContent = song.title;
+    card.appendChild(container);
+    card.appendChild(info);
 
-  const link = document.createElement("a");
-
-  link.href =
-    "https://www.youtube.com/watch?v=" +
-    encodeURIComponent(song.id);
-
-  link.target = "_blank";
-  link.rel = "noopener";
-  link.textContent = "Watch on YouTube";
-
-  container.appendChild(iframe);
-  card.appendChild(container);
-  card.appendChild(title);
-  card.appendChild(link);
-
-  musicList.appendChild(card);
-
+    musicList.appendChild(card);
 });
 
+document.getElementById("year").textContent =
+    new Date().getFullYear();
 </script>
 
 </body>
 </html>
+
 
 
 
